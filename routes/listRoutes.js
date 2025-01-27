@@ -4,10 +4,10 @@ import { addlist,editlist,deletelist,singlelist ,getallList} from "../controller
 const listroutes = express.Router()
 
 listroutes.post("/addlist",addlist)
-listroutes.put("/editlist",editlist)
+listroutes.put("/editlist/:id",editlist)
 listroutes.delete("/deletelist/:id", deletelist)
-listroutes.get("/singlrlist/:id",singlelist)
-listroutes.get("/getalllist",getallList)
+listroutes.get("/singlelist/:id",singlelist)
+listroutes.get("/getAllList",getallList)
 
 
 
