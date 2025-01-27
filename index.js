@@ -8,14 +8,13 @@ dotenv.config()
 
 const app = express()
 const port = process.env.PORT
+
 app.use(cors({
-    origin: [
-        "https://special-man-ltd-frontend-dm1g.vercel.app",
-        "https://special-man-ltd-frontend-6zcx.vercel.app"
-    ],
+    origin: "https://special-man-ltd-frontend-s725.vercel.app", // Allow all origins for testing purposes
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true
 }))
+
 connectdb()
 app.use(express.json())
 
@@ -26,5 +25,5 @@ app.get("/", (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log("server is running")
+    console.log(`Server is running on port ${port}`)
 })
