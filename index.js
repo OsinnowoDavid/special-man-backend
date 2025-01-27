@@ -8,12 +8,18 @@ dotenv.config()
 
 const app = express()
 const port = process.env.PORT
-app.use(cors())
+app.use(cors({
+    origin:["https://special-man-ltd-frontend-dm1g.vercel.app"],
+  methods:["GET", "POST","DELETE", "PUT"],
+  credentials:true
+}))
 connectdb()
 app.use(express.json())
 
 app.use("/api/list",listroutes)
 
+app.get("/", (req,res) => {
+    res.json ("hello")})
 
 
 
